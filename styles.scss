@@ -1,0 +1,113 @@
+@import "_variables";
+@import "_cards";
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  header {
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      @media screen and (max-width: $breakpoint-small) {
+        display: none;
+      }
+    }
+    .page-title {
+      background-color: yellowgreen;
+      color: white;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .page-container {
+    display: flex;
+
+    @media screen and (max-width: $breakpoint-small) {
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: green;
+
+      .menu-container {
+        position: sticky;
+        top: 0;
+        min-width: $sidebar-width;
+
+        .menu-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 50px;
+          color: white;
+          font-size: 1.5rem;
+
+          @media screen and (max-width: $breakpoint-small) {
+            display: none;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          @media screen and (max-width: $breakpoint-small) {
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 0.5rem;
+          }
+
+          li {
+            background-color: cornsilk;
+            border: 1px solid silver;
+            padding: 1rem;
+            @media screen and (max-width: $breakpoint-small) {
+              width: 80px;
+            }
+
+            &:hover {
+              background-color: steelblue;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: $breakpoint-small) {
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    main {
+      background-color: whitesmoke;
+      flex-grow: 1;
+      padding: 1rem;
+
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-evenly;
+        @media screen and (max-width: $breakpoint-small) {
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+  footer {
+    height: $footer-height;
+    background-color: cornsilk;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+}
